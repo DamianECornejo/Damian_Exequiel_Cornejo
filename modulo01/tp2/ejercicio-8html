@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+    <html>
+        <head> 
+            <title> Ejercicio 8 - Trabajo Practico n° 2 </title>
+        </head>
+    <body>
+    <script type="text/javascript">
+
+    function getRnd(numberArr) {
+        let newNumber;
+        while (!newNumber || numberArr.includes(newNumber)) {
+            newNumber = Math.floor((Math.random() * 100) + 1);
+        }
+        return newNumber;
+    }
+
+
+    function generateNumbers() {
+        const numberArr = [];
+        while (numberArr.length !== 100) {
+            const n = getRnd(numberArr);
+            numberArr.push(n);
+        }
+        return numberArr;
+    }
+    
+    document.write(generateNumbers());
+    </script>
+    </body>
+</html>

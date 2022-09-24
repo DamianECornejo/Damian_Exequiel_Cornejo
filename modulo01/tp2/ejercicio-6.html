@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Ejercicio 6 - Trabajo Practico n°2 </title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        var vocales = ["a", "e", "i", "o", "u"];
+        var texto = prompt("Introduce un texto");
+        var textomin = texto.toLowerCase();
+        var posicion = 0;
+        var parar = false;
+        for (var i = 0; i < textomin.length; i++) {
+            for (var j = 0; j < vocales.length; j++) {
+                if (vocales[j] == textomin.charAt(i)) {
+                    posicion = i;
+                    parar = true;
+                    break;
+                }
+            }
+            if (parar) {
+                break;
+            }
+        }
+        alert("La primera vocal está en la posición " + posicion + "La vocal encontrada fue la " + vocales[j]);
+
+    </script>
+</body>
+
+</html>

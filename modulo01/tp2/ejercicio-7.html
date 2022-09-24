@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Ejercicio 7 - Trabajo Practico n° 2 </title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        function reverse(rs) {
+            if (rs === "") {
+                return "";
+            } else {
+                return reverse(rs.substr(1)) + rs.charAt(0);
+            }
+        }
+
+        let rs = prompt("Escribir una frase...")
+        console.log (reverse(rs));
+    </script>
+</body>
+
+</html>

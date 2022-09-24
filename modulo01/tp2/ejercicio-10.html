@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Ejercicio 10 - Trabajo Practico n° 2 </title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        let mes;
+        mes = prompt('Introduzca el número del mes:', '');
+        mes = parseInt(mes);
+
+        if (mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) {
+            document.write('Este mes tiene 31 dias.');
+        }
+        else {
+            if (mes == 2)
+                document.write('Este mes puede tener 30 dias o menos.');
+            else
+                document.write('Este mes tiene 30 dias.');
+        } 
+    </script>
+</body>
+
+</html>

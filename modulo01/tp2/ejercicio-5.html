@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta>
+<title> Ejercicio 5 - Trabajo Practico n°2 </title>
+
+
+<script type="text/javascript">
+
+
+  var cadena = prompt("Introduce una frase.");
+  var resultado;
+
+
+function info(cadena) {
+  var resultado = "La cadena \""+cadena+"\" ";
+
+  if(cadena == cadena.toUpperCase()) {
+    resultado += " está formada sólo por mayúsculas";
+  }
+  else if(cadena == cadena.toLowerCase()) {
+    resultado += " está formada sólo por minúsculas";
+  }
+  else {
+    resultado += " está formada por mayúsculas y minúsculas";
+  }
+
+  return resultado;
+}
+
+alert (info(cadena));
+</script>
+</head>
+
+<body>
+</body>
+</html>

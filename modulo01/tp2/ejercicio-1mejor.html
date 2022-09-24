@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Ejercicio 1 - Trabajo Practico n° 2 </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    var verdadero, char;
+    var valores = [verdadero, false, 2, "hola", "mundo", 3, char]
+    var mPalabra = "";
+    var sum = 0;
+    var res = 0;
+    var div;
+    var mul = 1;
+    var longitud = 0;
+    var valorresStr = [];
+
+
+
+    for (let i = 0; i < valores.length; i++) {
+      if (typeof valores[i] === "string") {
+        valorresStr.push(valores[i])
+
+      }
+
+
+
+      if (typeof valores[i] === "number") {
+        sum = valores[i] + sum;
+        res = valores[i] - res;
+        div = valores[2] / valores[5]
+        mul *= valores[i];
+      }
+
+
+
+      if (typeof valores[i] === "string") {
+        if (valores[i].length > longitud) {
+          longitud = valores[i].length;
+          mPalabra = valores[i];
+        }
+      }
+    }
+
+    console.log("2, Imprimir los elementos de menores a mayor cantidad de letra: " + valorresStr.sort(function (a, b) {
+
+      return a - b;
+
+    }));
+
+    console.log(sum);
+    console.log(res);
+    console.log(mul);
+    console.log(div);
+    console.log("La palabra mas larga entre todos los elementos es " + mPalabra);
+
+  </script>
+</body>
+
+</html>

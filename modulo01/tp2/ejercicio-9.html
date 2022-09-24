@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script>
+        var dato = [];
+        var val,media; 
+        const sum = 0;
+        
+     
+        val = window.prompt("Primer número?");
+        dato.push(parseInt(val));
+
+        val = window.prompt("Segundo número?");
+        dato.push(parseInt(val));
+
+        val = window.prompt("Tercer número?");
+        dato.push(parseInt(val));
+        
+    for (let i = 0; i < dato.length; i++) {
+    const notacion = dato[i];
+    while (dato[i] > 10 || dato[i] <  0) {
+        val = window.prompt("Nota n° " + i + " no corresponde, ingrese el dato correspondido.");
+        val = dato.splice(i,1,parseInt(val));
+    }
+}
+   
+
+
+        function ArrayAvg(myArray) {
+            var i = 0, summ = 0, ArrayLen = dato.length;
+            while (i < ArrayLen) {
+                summ = summ + dato[i++];
+            }
+            return summ / ArrayLen;
+        }
+        var a = ArrayAvg(dato);
+        console.log(a)
+
+
+
+        if (a <= 5) {
+            resultat = " Suspendido.";
+        } else {
+            if (a >= 6 && a <= 8) {
+                resultat = "Aprobado.";
+            }
+            else {
+                resultat = "Sobresaliente.";
+            }
+        }
+        document.write(`<h3>La nota final es ${resultat} </h3>`);
+
+    </script>
+</head>
+
+</html>
