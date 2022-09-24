@@ -1,4 +1,5 @@
-# CURSO PROGRAMACIÓN WEB FULL STACK NIVEL 2 ![](https://imgur.com/gallery/YzeIRpG)
+# CURSO PROGRAMACIÓN WEB FULL STACK NIVEL 2 
+
 ## MÓDULO 1 - Nivelación y fundamentos de la Programación
 ### Ejercicio 1:
 a) Abrir el editor HTML. 
@@ -181,3 +182,5 @@ https://www.w3schools.com/js/js_variables.asp
 https://www.w3schools.com/jsref/jsref_parseint.asp
 
 https://lenguajejs.com/javascript/arrays/que-es/
+
+![](karekano-embrace.gif)
