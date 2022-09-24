@@ -2,7 +2,7 @@
 ## MÓDULO 1 - Nivelación y fundamentos de la Programación
 ### Ejercicio 1:
 1. a) Abrir el editor HTML. 
-2. b) Archivo Nuevo. 
+b). Archivo Nuevo. 
 3. c) Copiar el código que empieza por <!DOCTYPE html> siguiente.
 4. d) Menú... Archivo... Guardar como: Ejercicio1.html.
 5. e) Abrir el archivo Ejercicio1.html en el navegador.
