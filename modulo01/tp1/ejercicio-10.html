@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Ejercicio 10 </title>
+</head>
+
+<body>
+    <script type="text/javascript">
+
+        let val1, resultado;
+
+        val1 = window.prompt("Introduzca el numero correspondiente al Mes", "...");
+        var varMeses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+        for (let index = 0; index < varMeses.length; index++) {
+            const mes = varMeses[index];
+            while (val1 > 12 || val1 < 1) {
+                val1 = window.prompt("Numero del Mes no correspondido, Introduzca otro numero correspondiente al Mes", "...");
+                resultado = varMeses[val1];
+            }
+        }
+        resultado = varMeses[val1];
+        document.write("El Mes elegido: ", resultado);
+    </script>
+</body>
+</html>
