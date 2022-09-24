@@ -183,4 +183,4 @@ https://www.w3schools.com/jsref/jsref_parseint.asp
 
 https://lenguajejs.com/javascript/arrays/que-es/
 
-![](karekano-embrace.gif)
+![hola](karekano-embrace.gif)
