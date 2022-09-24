@@ -74,7 +74,9 @@ Por ejemplo: 12 = tiene 31 días
 
 ### Bibliografía:
 https://www.w3schools.com/js/js_htmldom_document.asp
+
 https://www.w3schools.com/js/js_object_iterables.asp
+
 https://www.w3schools.com/js/js_object_methods.asp
 
 ![hola](https://c.tenor.com/FtEh5nCgw78AAAAC/kareshi-kanojo-no-jijou-yukino-miyazawa.gif)
