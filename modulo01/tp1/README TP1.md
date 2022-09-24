@@ -1,4 +1,4 @@
-# CURSO PROGRAMACIÓN WEB FULL STACK NIVEL 2 (png-transparent-computer-icons-heart-heart-icon-thumbnail.png)
+# CURSO PROGRAMACIÓN WEB FULL STACK NIVEL 2 ![](png-transparent-computer-icons-heart-heart-icon-thumbnail.png)
 ## MÓDULO 1 - Nivelación y fundamentos de la Programación
 ### Ejercicio 1:
 a) Abrir el editor HTML. 
