@@ -1,0 +1,192 @@
+
+"EJERCICIO 1"
+CREATE TABLE "alumnos" (
+  `Cod_Matricula` int NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(80) DEFAULT NULL,
+  `FechaNacimiento` datetime DEFAULT NULL,
+  `email` varchar(80) DEFAULT NULL,
+  `ALUMNOS_EN_CURSO` int DEFAULT NULL,
+  PRIMARY KEY (`Cod_Matricula`),
+  KEY `FOREKEYS _idx` (`ALUMNOS_EN_CURSO`),
+  KEY `Forkeys_idx` (`ALUMNOS_EN_CURSO`),
+  CONSTRAINT `Forkeys` FOREIGN KEY (`ALUMNOS_EN_CURSO`) REFERENCES `curso` (`Cod_Curso`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3,
+
+INSERT INTO alumnos (Nombre, FechaNacimiento, email) 
+VALUES 
+(Damián Cornejo, 1998-08-11,damian@gmail.com), 
+(Nicole Cardenas, 2001-05-26,Nicole@gmail.com),  
+(Facundo Diaz,1998-08-25,facundo@hotmail.com); 
+
+CREATE TABLE `curso` (
+  `Cod_Curso` int NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(45) NOT NULL,
+  `PROFESOR_ID_Profesor` int NOT NULL,
+  PRIMARY KEY (`Cod_Curso`),
+  KEY `fk_CURSO_PROFESOR_idx` (`PROFESOR_ID_Profesor`),
+  CONSTRAINT `Alumnos` FOREIGN KEY (`PROFESOR_ID_Profesor`) REFERENCES `alumnos` (`ALUMNOS_EN_CURSO`),
+  CONSTRAINT `fk_CURSO_PROFESOR` FOREIGN KEY (`PROFESOR_ID_Profesor`) REFERENCES `profesor` (`ID_Profesor`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3
+
+INSERT INTO curso (Nombre) 
+VALUES 
+(Filosofia), 
+(Artes),  
+(Industrial); 
+
+CREATE TABLE `profesor` (
+  `ID_Profesor` int NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(45) DEFAULT NULL,
+  `Especialidad` varchar(45) DEFAULT NULL,
+  `Email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID_Profesor`),
+  UNIQUE KEY `Especialidad_UNIQUE` (`Especialidad`),
+  UNIQUE KEY `Email_UNIQUE` (`Email`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3
+
+INSERT INTO profesor (Nombre,Especialidad,Email) 
+VALUES 
+(Alejo Pin, Filosofia, Alejo@gmail.com), 
+(Valentina gas, Artes,Valentina@gmail.com),  
+(Carlito X,Industrial,Carlito@hotmail.com); 
+
+
+
+
+"EJERCICIO 2"
+CREATE TABLE `empleado` (
+  `ID_Empleado` int NOT NULL AUTO_INCREMENT,
+  `DNI` int NOT NULL,
+  `Nombre` varchar(45) NOT NULL,
+  `Telefono` int DEFAULT NULL,
+  `Email` varchar(255) NOT NULL,
+  `Fecha_alta` date NOT NULL,
+  `LOCALIDAD_Codigo_Localidad` int NOT NULL,
+  PRIMARY KEY (`ID_Empleado`),
+  UNIQUE KEY `ID_Empleado_UNIQUE` (`ID_Empleado`),
+  KEY `fk_EMPLEADO_LOCALIDAD_idx` (`LOCALIDAD_Codigo_Localidad`),
+  CONSTRAINT `fk_EMPLEADO_LOCALIDAD` FOREIGN KEY (`LOCALIDAD_Codigo_Localidad`) REFERENCES `localidad` (`Codigo_Localidad`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3
+
+INSERT INTO empleado (DNI,Nombre,Telefono,Email,Fecha_Alta) 
+VALUES 
+(41303260, Axel Ledesma, 543764531234, Axel@gmail.com, 2019-12-23), 
+(42333450, Nahuel Pintos, 543764111232, Nahuel@gmail.com, 2018-07-03),  
+(41304545, Nadia Adam, 5437641235434, Nadia@gmail.com, 2020-12-14); 
+
+CREATE TABLE `localidad` (
+  `Codigo_Localidad` int NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(45) NOT NULL,
+  `Codigo_Postal` int NOT NULL,
+  `PROVINCIA_ID_Provincia` int NOT NULL,
+  PRIMARY KEY (`Codigo_Localidad`),
+  KEY `fk_LOCALIDAD_PROVINCIA1_idx` (`PROVINCIA_ID_Provincia`),
+  CONSTRAINT `fk_LOCALIDAD_PROVINCIA1` FOREIGN KEY (`PROVINCIA_ID_Provincia`) REFERENCES `provincia` (`ID_Provincia`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3
+
+INSERT INTO localidad (Nombre,Codigo_Postal,PROVINCIA_ID_Provincia) 
+VALUES 
+(Posadas, 3300,1), 
+(Buenos Aires, 1406,2),  
+(Apostoles,3350,1);
+
+CREATE TABLE `pais` (
+  `ID_Pais` int NOT NULL AUTO_INCREMENT,
+  `Nombre_Pais` varchar(45) NOT NULL,
+  `Pais_ID_Provincia` int NOT NULL,
+  PRIMARY KEY (`ID_Pais`),
+  UNIQUE KEY `Nombre_Pais_UNIQUE` (`Nombre_Pais`),
+  KEY `fk_PAIS_PROVINCIA1_idx` (`PROVINCIA_ID_Provincia`),
+  CONSTRAINT `fk_PAIS_PROVINCIA1` FOREIGN KEY (`PROVINCIA_ID_Provincia`) REFERENCES `provincia` (`ID_Provincia`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3
+
+INSERT INTO pais (Nombre_Pais)
+VALUES 
+(Argentina), 
+(Colombia),  
+(Australia);
+
+CREATE TABLE `provincia` (
+  `ID_Provincia` int NOT NULL AUTO_INCREMENT,
+  `Nombre_Provincia` varchar(45) NOT NULL,
+  PRIMARY KEY (`ID_Provincia`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3
+
+
+INSERT INTO provincia (Nombre_Pais)
+VALUES 
+(Misiones), 
+(Buenos Aires),  
+(Tucuman);
+
+
+"EJERCICIO 3"
+CREATE TABLE `auto` (
+  `Nr_auto` int NOT NULL,
+  `Matricula` varchar(45) NOT NULL,
+  `Modelo` varchar(45) NOT NULL,
+  `Color` varchar(45) NOT NULL,
+  `Marca` varchar(45) NOT NULL,
+  `Alquiler_Hora` int NOT NULL,
+  PRIMARY KEY (`Nr_auto`),
+  UNIQUE KEY `Matricula_UNIQUE` (`Matricula`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+INSERT INTO  auto(Matricula,Modelo,Color,Marcar,Alquiler_Hora)
+VALUES 
+(ABC123, ACM1p, Blanco, Toyota, 2hs), 
+(DEF456, ACM2p, Negro, Renault, 4hs),  
+(GHI789, ACM3p, Rojo y Azul, Chevrolet , 8hs);
+
+CREATE TABLE `cliente` (
+  `Codigo` int NOT NULL AUTO_INCREMENT,
+  `Nombre` varchar(45) NOT NULL,
+  `DNI` int NOT NULL,
+  `Direccion` varchar(45) NOT NULL,
+  `Telefono` varchar(45) NOT NULL,
+  `Cliente_Codigo` int NOT NULL,
+  PRIMARY KEY (`Codigo`),
+  KEY `fk_Cliente_Cliente1_idx` (`Cliente_Codigo`),
+  CONSTRAINT `fk_Cliente_Cliente1` FOREIGN KEY (`Cliente_Codigo`) REFERENCES `cliente` (`Codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+INSERT INTO  cliente(Nombre,DNI,Direccion,Telefono,Cliente_Codigo)
+VALUES 
+(Susana Rearte, 23567545,Ch121, 3745676734,1), 
+(Walter Kes, 30345677, Ch111, 376534513, 2),  
+(Susana Rearte, 23567545,Ch121, 3745676734,1);
+
+CREATE TABLE `reserva` (
+  `Nr_ID` int NOT NULL AUTO_INCREMENT,
+  `Fecha_Inicio` date DEFAULT NULL,
+  `Fecha_Final` date DEFAULT NULL,
+  `Precio_Total` double DEFAULT NULL,
+  `Cliente_Codigo` int NOT NULL,
+  PRIMARY KEY (`Nr_ID`),
+  KEY `fk_Reserva_Cliente1_idx` (`Cliente_Codigo`),
+  CONSTRAINT `fk_Reserva_Cliente1` FOREIGN KEY (`Cliente_Codigo`) REFERENCES `cliente` (`Codigo`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+INSERT INTO  reserva(Fecha_Inicio,Fecha_Final,Precio_Total,Cliente_Codigo)
+VALUES 
+(2020-08-08, 2020-08-15, 20000, 1), 
+(2020-09-01, 2020-09-08, 25000, 2),  
+(2020-10-08, 2020-10-15, 25500, 1);
+
+CREATE TABLE `reserva_has_auto` (
+  `Reserva_Nr_ID` int NOT NULL,
+  `Auto_Nr_auto` int NOT NULL,
+  `Comustible` varchar(45) NOT NULL,
+  `Precio_Adicional` int DEFAULT NULL,
+  PRIMARY KEY (`Reserva_Nr_ID`,`Auto_Nr_auto`),
+  KEY `fk_Reserva_has_Auto_Auto1_idx` (`Auto_Nr_auto`),
+  KEY `fk_Reserva_has_Auto_Reserva_idx` (`Reserva_Nr_ID`),
+  CONSTRAINT `fk_Reserva_has_Auto_Auto1` FOREIGN KEY (`Auto_Nr_auto`) REFERENCES `auto` (`Nr_auto`),
+  CONSTRAINT `fk_Reserva_has_Auto_Reserva` FOREIGN KEY (`Reserva_Nr_ID`) REFERENCES `reserva` (`Nr_ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+INSERT INTO  reserva_has_auto(Auto_nr_ID,Comustible,Precio_Adicional)
+VALUES 
+(1, 500, 5000), 
+(2, 200, 2000),  
+(1, 600, 2450);
