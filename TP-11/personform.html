@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="estilos.css" type="text/css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+</head>
+<body> 
+    <h1 class="encabezado"><img src="silicon transparente.png" class="imgencabezado">Portal Silicon Full Stacks
+    </h1>
+
+<div class="menu">
+    <a href="index.html"class="menu-item">
+        <span class="material-symbols-outlined"> 
+            home
+        </span>
+      Inicio
+    </a>
+    <a href="personform.html"class="menu-item">
+        <span class="material-symbols-outlined"> 
+            person_add
+        </span>
+        Gestion Personas
+    </a>
+    <a href="personlist.html"class="menu-item">
+        <span class="material-symbols-outlined"> 
+            group
+        </span>
+        Listar Personas
+    </a>
+</div>
+<h1 class="titulo">
+    <span class="material-symbols-outlined"> 
+        person_add
+    </span>
+    Gestion Personas
+</h1>
+
+<hr>
+
+
+
+<h1>Crear Persona</h1>
+<form action="/persona/guardar" target="_blank" method="POST" autocomplete="on">
+    <fieldset>
+        <legend>Datos personales:</legend>
+        <div> 
+            <input type="hidden" id="codigooculto" name="codigooculto" value="CUPON_25_OFF">
+        </div>
+        <div>
+            <label for="dni">* DNI</label><br>
+            <input type="number" id="dni" name="dni" min="0" max="99999999" step="10" required>
+        </div>
+        <div>
+            <label for="fname">* Nombre</label><br>
+            <input type="text" id="fname" name="fname" placeholder="Ingrese el Nombre" required>
+        </div>
+        <div>
+            <label for="lname">* Apellido:</label><br>
+            <input type="text" id="lname" name="lname" size="20" placeholder="Ingrese el Apellido" required>
+        </div>
+        <hr>
+        <div>
+            <label>Sexo:</label><br>
+
+            <input type="radio" name="sexo" id="M" value="M">
+            <label for="M">Masculino</label><br>
+
+            <input type="radio" name="sexo" id="F" value="F">
+            <label for="F">Femenino</label><br>
+
+            <input type="radio" name="sexo" id="O" value="O">
+            <label for="O">Otro</label>
+        </div>
+        <div>
+            <br>
+            <label>Fecha de Nacimiento:</label><br>
+            <input type="date" id="fecnac" name="fecnac">
+        </div>
+        
+    </fieldset>
+    <fieldset>
+        <legend>Datos de acceso</legend>
+        <div>
+            <label for="correo">Correo electronico:</label><br>
+            <input type="email" id="correo" name="correo">
+        </div>
+        <div>
+            <label for="pass">Contraseña:</label><br>
+            <input type="password" id="pass" name="pass">
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Datos academicos</legend>
+        <div>
+            <label for="estudio">Nivel estudios:</label>
+            <select id="estudio" name="estudio">
+                <option value="pri">Primaria</option>
+                <option value="sec">Secundario</option>
+                <option value="ter" selected>Terciario</option>
+                <option value="uni" selected>Universitario</option>
+                <option value="pos" selected>Post Grado</option>
+            </select>
+        </div>
+    </fieldset>
+
+    <fieldset>
+    <legend>Acciones</legend>
+    <div>
+        <button type="submit">
+            <img src="https://spng.pngfind.com/pngs/s/176-1760995_png-file-svg-user-icon-free-copyright-transparent.png"
+                width="10" height="10">
+            Crear persona
+        </button>
+        <input type="reset" value="Limpiar datos">
+    </div>
+</fieldset>
+<br>
+<br>
+</form>
+</body>
+</html>

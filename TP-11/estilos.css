@@ -1,0 +1,40 @@
+.encabezado{
+    text-align:center;
+    color:white;
+    padding: 20px;
+    background-color: darkblue;
+    border: 2px, solid darkblue;
+    margin: 0px;
+}
+
+.imgencabezado{
+    position: absolute;
+    left: 20px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+.menu{
+    padding: 5px;
+    text-align: center;
+    background-color: #e4e4e4;
+}
+
+.menu-item{
+border: 1px solid gray;
+padding: 5px;
+font-size: 25px;
+color: darkblue;
+}
+
+.titulo{
+    background: #e4e4e4;
+    padding: 10px;
+    margin:0px;
+}
+
+.tabla{
+    font-size: 20px;
+    width: 70%;
+    border: 1px solid black;
+}
